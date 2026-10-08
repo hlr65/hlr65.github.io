@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Henry Renken's accounting student portfolio at Rutgers University–New Brunswick.">
+  <title>Henry Renken | Accounting Portfolio</title>
+  <style>
+    :root {
+      --navy: #0d2543;
+      --blue: #174475;
+      --light-blue: #91b5d9;
+      --button-blue: #91afca;
+      --paper: #f5f7f9;
+      --ink: #102b4b;
+      --muted: #526276;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .navbar {
+      min-height: 84px;
+      background: var(--navy);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 18px max(calc((100% - 1370px) / 2), 5%);
+    }
+    .logo {
+      color: white;
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 28px; }
+    .nav-links a { color: white; font-size: 17px; text-decoration: none; }
+    .nav-links a:hover { color: var(--light-blue); }
+    .hero {
+      background: linear-gradient(115deg, #102b4b, var(--blue));
+      color: white;
+      padding: 90px 5%;
+    }
+    .hero-content {
+      max-width: 1460px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 42px;
+    }
+    .profile-photo {
+      width: 290px;
+      height: 290px;
+      object-fit: cover;
+      object-position: center;
+      border: 5px solid white;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: #263b52;
+    }
+    .intro { flex: 1; min-width: 0; }
+    h1 {
+      font-size: clamp(38px, 4vw, 54px);
+      line-height: 1.15;
+      margin: 0 0 18px;
+      letter-spacing: -0.7px;
+    }
+    .subtitle { color: var(--light-blue); font-size: 22px; margin: 0; }
+    .class-year { font-size: 19px; font-weight: 700; margin: 6px 0 18px; }
+    .bio { max-width: 900px; font-size: 18px; margin: 0 0 24px; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 16px; }
+    .button {
+      display: inline-block;
+      padding: 14px 23px;
+      border: 3px solid var(--button-blue);
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+      transition: transform .2s ease, opacity .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); opacity: .88; }
+    .primary { background: var(--button-blue); color: var(--navy); }
+    .secondary { color: white; }
+    main { max-width: 1510px; margin: 0 auto; padding: 48px 5%; }
+    section { margin-bottom: 52px; scroll-margin-top: 100px; }
+    section h2 {
+      font-size: 32px;
+      line-height: 1.25;
+      margin: 0 0 28px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--button-blue);
+    }
+    .content-card {
+      background: white;
+      padding: 24px 28px;
+      margin-bottom: 18px;
+      border-radius: 10px;
+      box-shadow: 0 3px 14px rgba(16, 43, 75, .06);
+    }
+    .content-card h3 { font-size: 20px; margin: 0 0 7px; }
+    .content-card p { color: var(--muted); margin: 5px 0; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
+    .tag {
+      background: #eaf0f6;
+      color: var(--navy);
+      padding: 5px 11px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .project-label { color: #456c92; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; }
+    .email-link, .card-link { color: var(--blue); font-weight: 700; text-decoration: underline; }
+    footer { text-align: center; padding: 24px; background: var(--navy); color: white; }
+    footer p { margin: 0; }
+    @media (max-width: 850px) {
+      .navbar { flex-direction: column; padding: 20px; }
+      .nav-links { justify-content: center; gap: 10px 18px; }
+      .hero { padding: 48px 6%; }
+      .hero-content { flex-direction: column; text-align: center; gap: 25px; }
+      .profile-photo { width: 220px; height: 220px; }
+      .subtitle { font-size: 19px; }
+      .buttons { justify-content: center; }
+      main { padding: 34px 6%; }
+      section h2 { font-size: 27px; }
+      .content-card { padding: 22px; }
+    }
+    @media (max-width: 460px) {
+      .nav-links { gap: 8px 14px; }
+      .nav-links a { font-size: 15px; }
+      .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a class="logo" href="#about">Henry Renken</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="about">
+    <div class="hero-content">
+      <img src="headshot.jpg" alt="Henry Renken portrait" class="profile-photo">
+      <div class="intro">
+        <h1>Henry Renken</h1>
+        <p class="subtitle">Rutgers Business School • B.S. in Accounting</p>
+        <p class="class-year">Class of 2029</p>
+        <p class="bio">
+          I am a Rutgers University–New Brunswick accounting student focused on
+          building practical experience, professional relationships, and the
+          adaptability needed to succeed in challenging business environments.
+          I plan to pursue a business-related master’s degree and CPA licensure.
+        </p>
+        <div class="buttons">
+          <a class="button primary" href="#contact">Get In Touch</a>
+          <a class="button secondary" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn Profile ↗</a>
+          <a class="button secondary" href="resume.pdf" target="_blank" rel="noopener">Resume (PDF) ↗</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="skills">
+      <h2>Skills &amp; Capabilities</h2>
+      <div class="content-card">
+        <h3>Technical &amp; Digital Tools</h3>
+        <p>Microsoft Office and Excel, basic accounting, and accurate transaction handling.</p>
+        <div class="tag-list">
+          <span class="tag">Microsoft Excel</span><span class="tag">Microsoft Office</span>
+          <span class="tag">Basic Accounting</span><span class="tag">Cash Handling</span>
+        </div>
+      </div>
+      <div class="content-card">
+        <h3>Professional Skills</h3>
+        <p>Customer service, client support, communication, transaction accuracy, and money tracking.</p>
+        <div class="tag-list">
+          <span class="tag">Customer Service</span><span class="tag">Client Service</span>
+          <span class="tag">Communication</span><span class="tag">Attention to Detail</span>
+        </div>
+      </div>
+      <div class="content-card">
+        <h3>Languages</h3>
+        <p>German — A1 beginner level.</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="content-card">
+        <span class="project-label">Audit Simulation</span>
+        <h3>KPMG Ashbourne Audit Simulation</h3>
+        <p>
+          Completed an audit-focused learning project involving accounts receivable
+          confirmations, tracking confirmation responses, and preparing follow-up
+          communications for client approval.
+        </p>
+        <p>
+          <a class="card-link" href="https://www.theforage.com/simulations/kpmg-us/audit-gsyv" target="_blank" rel="noopener noreferrer">
+            View KPMG Audit Simulation on Forage ↗
+          </a>
+        </p>
+      </div>
+      <div class="content-card">
+        <span class="project-label">Tax Preparation Development</span>
+        <h3>Volunteer Income Tax Assistance (VITA)</h3>
+        <p>
+          Developing tax preparation knowledge through VITA training. Update this
+          section with your certification status and volunteer responsibilities
+          once completed.
+        </p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Education &amp; Experience</h2>
+      <div class="content-card">
+        <h3>Rutgers University–New Brunswick</h3>
+        <p><strong>Bachelor of Science in Accounting</strong> · Expected May 2029</p>
+        <p>Rutgers Business School. Planning to pursue a master’s degree and CPA licensure.</p>
+      </div>
+      <div class="content-card">
+        <h3>Employment, Service &amp; Leadership</h3>
+        <p>
+          Resume-listed experience and involvement includes Dollar Tree, Mildred E.
+          Strang Middle School, Curtis S. Read Scout Reservation, Yorktown Leos,
+          and John C. Hart Memorial Library.
+        </p>
+        <p>
+          Add or edit each role with your exact title, dates, and responsibilities
+          from your résumé so the portfolio reflects your experience accurately.
+        </p>
+      </div>
+      <div class="content-card">
+        <h3>Leadership &amp; Recognition</h3>
+        <p>Eagle Scout · PCSB Bank Academic Award · Boy Scouts of America</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="content-card">
+        <h3>Let’s Connect</h3>
+        <p>
+          I welcome opportunities to connect with accounting professionals,
+          learn about the field, and explore internship opportunities.
+        </p>
+        <p>
+          Replace this placeholder with your professional email:
+          <a class="email-link" href="mailto:your-email@example.com">your-email@example.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Henry Renken · Accounting Portfolio</p>
+  </footer>
+</body>
+</html>
